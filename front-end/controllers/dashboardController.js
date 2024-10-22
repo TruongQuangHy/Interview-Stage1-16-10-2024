@@ -20,7 +20,10 @@ angular
 
       function fetchData() {
         $http
-          .get(`${API_BASE_URL}/all-users`, AuthService.getTokenConfig())
+          .get(
+            "http://localhost:5000/api/user/all-users",
+            AuthService.getTokenConfig()
+          )
           .then(function (response) {
             $scope.users = response.data;
           })

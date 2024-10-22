@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const { models } = require("mongoose");
 
 const generateToken = (id, role) => {
-  return jwt.sign({ id, role }, process.env.JWT_SECRET, { expiresIn: "15s" });
+  return jwt.sign({ id, role }, process.env.JWT_SECRET, { expiresIn: "30s" });
 };
 
 const generateRefreshToken = (id, role) => {

@@ -24,7 +24,7 @@ app.run(function ($rootScope, AuthService, $location) {
   };
 
   // Điều hướng người dùng nếu không có token
-  $rootScope.$on("$routeChangeStart", function (event, next, current) {
+  $rootScope.$on("$routeChangeStart", function (next) {
     if (
       !AuthService.isAuthenticated() &&
       next.templateUrl !== "views/login.html"

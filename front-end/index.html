@@ -17,13 +17,20 @@
     <script src="controllers/dashboardController.js"></script>
   </head>
   <body>
-    <nav>
-      <!-- Navigation -->
-      <a href="#/">Home</a>
-      <a href="#/dashboard" ng-if="isAdmin()">Dashboard</a>
-      <a href="" ng-click="logout()">Logout</a>
+    <nav class="navbar" ng-if="isAuthenticated()">
+      <div class="container">
+        <a href="#!/" class="logo"
+          ><img
+            src="https://api.eranin.com/Files/ed2da895-417a-4b19-95b4-2ed8b79892e6/Webconfig/logo-logo 3.png"
+            alt=""
+        /></a>
+        <ul>
+          <li ng-if="isAdmin()"><a href="#!/dashboard">Dashboard</a></li>
+          <li ng-if="!isAdmin()"><a href="#!/">Home</a></li>
+          <li><a href="" ng-click="logout()">Logout</a></li>
+        </ul>
+      </div>
     </nav>
-
     <div ng-view></div>
   </body>
 </html>

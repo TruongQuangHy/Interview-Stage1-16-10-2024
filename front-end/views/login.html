@@ -1,0 +1,22 @@
+<div class="main__login">
+  <div class="login">
+    <h2>Login</h2>
+    <form ng-submit="login()">
+      <input
+        type="email"
+        id="email"
+        ng-model="credentials.email"
+        placeholder="Email"
+        required
+      /><br /><br />
+      <input
+        type="password"
+        id="password"
+        ng-model="credentials.password"
+        placeholder="Password"
+        required
+      /><br /><br />
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>

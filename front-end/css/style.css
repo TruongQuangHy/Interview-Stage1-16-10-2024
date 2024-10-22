@@ -16,3 +16,83 @@ nav a {
 nav a:hover {
   text-decoration: underline;
 }
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container ul {
+  display: flex;
+}
+
+.container ul li {
+  list-style: none;
+}
+
+.container ul li a:hover {
+  color: rgb(228, 104, 104);
+}
+
+.main__admin {
+  display: grid;
+  justify-content: center;
+}
+
+.main__admin h2 {
+  text-align: center;
+}
+
+.main__admin table {
+  border: 1px solid black;
+  width: 300px;
+}
+
+.main__admin table tbody tr td {
+  text-align: center;
+}
+
+.main__login {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}
+
+.login {
+  margin-top: 5rem;
+  border: 1px solid black;
+  border-radius: 25px;
+  background-color: rgb(217, 229, 240);
+}
+
+.login h2 {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.login form {
+  margin: 0 2rem;
+  margin-bottom: 2rem;
+}
+
+.login form input {
+  height: 25px;
+  border-radius: 5px;
+}
+
+.login form button {
+  margin-left: 25%;
+  height: 25px;
+  width: 100px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login form button:hover {
+  background-color: bisque;
+}
+
+img {
+  width: 15%;
+}
