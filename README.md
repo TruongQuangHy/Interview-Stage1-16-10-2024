@@ -117,8 +117,9 @@ FRONT END
   - File router.js: Dùng để điều hướng trong ứng dụng AngularJs. Nó xác định cách mà các URL cụ thể sẽ tương ứng với những trang và controller nào
   - File index.html: Đây là cấu trúc chính của ứng dụng, nó thiết lập nền tảng cho việc hiển thị giao diện người dùng và định tuyến giữa các trang với nhau
 
-- Mô hình hoạt động
-  - Đầu tiền khi chạy website người dùng phải đăng nhập mới vào trang home.
-  - Khi đăng nhập sẽ tạo ra token và back end sẽ xử lý người dùng xem token vừa tạo có chưa role là admin hay user. Nếu admin thì sẽ được điều hướng qua dashboard và nếu là user thì sẽ điều hướng qua trang home
-  - Token được tạo sẽ cho phép người dùng đó có quyền xử dụng tính năng nào của trang web và tính năng không được dùng của trang web
-  - Token được tạo sẽ được lưu trong vòng 30 giấy hoặc 30 phút tùy théo back end sử lý. Khi token hết hàng sẽ xóa đi và thay vào đó là một token được tạo khác thay thế vào. Và token dùng để tạo token thay để cho token củ có thời hạn sử dụng là 1 tuần hoặc 1 tháng tùy theo back end sử lý.
+MÔ HÌNH HOẠT ĐỘNG
+
+- Đầu tiền khi chạy website người dùng phải đăng nhập mới vào trang home.
+- Khi đăng nhập sẽ tạo ra token và back end sẽ xử lý người dùng xem token vừa tạo có chưa role là admin hay user. Nếu admin thì sẽ được điều hướng qua dashboard và nếu là user thì sẽ điều hướng qua trang home
+- Token được tạo sẽ cho phép người dùng đó có quyền xử dụng tính năng nào của trang web và tính năng không được dùng của trang web
+- Token được tạo sẽ được lưu trong vòng 30 giấy hoặc 30 phút tùy théo back end sử lý. Khi token hết hàng sẽ xóa đi và thay vào đó là một token được tạo khác thay thế vào. Và token dùng để tạo token thay để cho token củ có thời hạn sử dụng là 1 tuần hoặc 1 tháng tùy theo back end sử lý.
