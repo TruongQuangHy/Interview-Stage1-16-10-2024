@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AngularJS Application</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+
+    <!-- Load các tệp JavaScript -->
+    <script src="app.js"></script>
+    <script src="routes.js"></script>
+    <script src="services/authService.js"></script>
+    <script src="controllers/loginController.js"></script>
+    <script src="controllers/homeController.js"></script>
+    <script src="controllers/dashboardController.js"></script>
+  </head>
+  <body>
+    <nav>
+      <!-- Navigation -->
+      <a href="#/">Home</a>
+      <a href="#/dashboard" ng-if="isAdmin()">Dashboard</a>
+      <a href="" ng-click="logout()">Logout</a>
+    </nav>
+
+    <div ng-view></div>
+  </body>
+</html>
