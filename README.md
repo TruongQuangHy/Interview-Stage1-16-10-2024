@@ -1,6 +1,10 @@
 # Interview Stage1 16/10/2024
 
-Đoạn mô tả ngắn gọn về dự án này, mục tiêu hoặc những gì nó làm được.
+Dự án này làm chức năng đăng nhập gồm yêu cầu
+
+- Short token là token được tạo ra khi đăng nhập thành công và có thời hạn ngắn.
+- Long token là token có thời gian dài hạn khoản 1 tuần hoặc một tháng có công dụng tạo token thay vào token ngắn hạn
+- Chức năng MSA được gọi là Microservices Architecture sẽ hỗ trợ tốt cho việc xác thực và quản lý người dùng. Hãy đảm bảo rằng bạn cũng có các dịch vụ khác trong hệ thống (như dịch vụ quản lý sản phẩm, dịch vụ thanh toán, v.v.) để hoàn thiện kiến trúc microservices của mình!
 
 ## Mục Lục
 
