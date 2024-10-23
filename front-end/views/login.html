@@ -1,22 +1,24 @@
-<div class="main__login">
+<div class="main__login" ng-controller="LoginController">
   <div class="login">
     <h2>Login</h2>
-    <form ng-submit="login()">
-      <input
-        type="email"
-        id="email"
-        ng-model="credentials.email"
-        placeholder="Email"
-        required
-      /><br /><br />
+    <form ng-if="!otpRequired">
+      <input type="text" ng-model="credentials.email" placeholder="Email" />
+      <br />
       <input
         type="password"
-        id="password"
         ng-model="credentials.password"
         placeholder="Password"
-        required
-      /><br /><br />
-      <button type="submit">Login</button>
+      />
+
+      <button ng-click="login()">Login</button>
+    </form>
+
+    <!-- Form nhập OTP -->
+    <form ng-if="otpRequired">
+      <label>Nhập mã OTP:</label>
+      <input type="text" ng-model="credentials.otp" placeholder="Mã OTP" />
+
+      <button ng-click="verifyOtp()">Xác thực OTP</button>
     </form>
   </div>
 </div>

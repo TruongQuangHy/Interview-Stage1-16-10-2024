@@ -3,8 +3,9 @@ const {
   createUser,
   loginUser,
   handlerRefreshToken,
-  getallUser,
   logout,
+  getAllUsers,
+  verifyOtp, // Thêm route xác thực email
 } = require("../controller/userController");
 const { authMiddleware, isAdmin } = require("../middlewares/authMiddleware");
 
@@ -12,8 +13,9 @@ const router = express.Router();
 
 router.post("/register", createUser);
 router.post("/login", loginUser);
-router.post("/logout", logout);
+router.post("/verify-otp", verifyOtp);
 router.post("/refresh-token", handlerRefreshToken);
-router.get("/all-users", authMiddleware, isAdmin, getallUser);
+router.post("/logout", logout);
+router.get("/all-users", authMiddleware, isAdmin, getAllUsers);
 
 module.exports = router;

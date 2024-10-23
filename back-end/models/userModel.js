@@ -1,7 +1,6 @@
-const mongoose = require("mongoose"); // Erase if already required
+const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
-// Declare the Schema of the Mongo model
 var userSchema = new mongoose.Schema(
   {
     email: {
@@ -20,23 +19,24 @@ var userSchema = new mongoose.Schema(
     refreshToken: {
       type: String,
     },
+    otp: { type: String },
+    otpExpires: { type: Date },
+    isVerified: { type: Boolean, default: false },
+    mfaEnabled: { type: Boolean, default: true },
   },
   {
     timestamps: true,
   }
 );
 
-// Mã hóa password
-
 userSchema.pre("save", async function (next) {
-  const salt = await bcrypt.genSaltSync(10);
+  if (!this.isModified("password")) return next();
+  const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
 });
 
-// Kiểm tra password mã hóa với password đăng nhập
 userSchema.methods.isPasswordMatched = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
 
-//Export the model
 module.exports = mongoose.model("User", userSchema);
