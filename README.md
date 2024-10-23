@@ -4,7 +4,7 @@ Dự án này làm chức năng đăng nhập gồm yêu cầu
 
 - Short token là token được tạo ra khi đăng nhập thành công và có thời hạn ngắn.
 - Long token là token có thời gian dài hạn khoản 1 tuần hoặc một tháng có công dụng tạo token thay vào token ngắn hạn
-- Chức năng MSA được gọi là Microservices Architecture sẽ hỗ trợ tốt cho việc xác thực và quản lý người dùng. Hãy đảm bảo rằng bạn cũng có các dịch vụ khác trong hệ thống (như dịch vụ quản lý sản phẩm, dịch vụ thanh toán, v.v.) để hoàn thiện kiến trúc microservices của mình!
+- Chức năng MFA được gọi lMulti-Factor Authentication (Xác thực đa yếu tố). Đây là một phương pháp bảo mật yêu cầu người dùng cung cấp hai hoặc nhiều yếu tố xác thực để xác minh danh tính của họ khi đăng nhập vào một hệ thống, ứng dụng hoặc dịch vụ.
 
 ## Mục Lục
 
@@ -24,6 +24,7 @@ Dự án gồm
 - Long token
 - Phân quyền người dùng
 - Làm mới token
+- Xác nhận bằng otp
   Ngôn ngữ sử dung
 - Front end: AngularJs v1.8.2
 - Back end: NodeJS v10.18.0
@@ -76,6 +77,7 @@ BACK-END
   - express-async-handler: v1.1.3,
   - jsonwebtoken: v8.5.1,
   - mongoose: v5.13.22,
+  - nodemailer: v6.9.15,
   - nodemon: v3.1.7
 - Chi tiết file
   - File config gồm những file con
@@ -123,7 +125,7 @@ FRONT END
 
 MÔ HÌNH HOẠT ĐỘNG
 
-- Đầu tiền khi chạy website người dùng phải đăng nhập mới vào trang home.
-- Khi đăng nhập sẽ tạo ra token và back end sẽ xử lý người dùng xem token vừa tạo có chưa role là admin hay user. Nếu admin thì sẽ được điều hướng qua dashboard và nếu là user thì sẽ điều hướng qua trang home
+- Đầu tiền khi chạy website người dùng phải đăng nhập xong sẽ gửi otp về email và người dùng lấy otp đó để đăng nhập dúng sẽ được chuyển hướng đến trang sử dụng.
+- Khi đăng nhập sẽ tạo otp gửi đến mail và back end sẽ xử lý otp và đồng thời sẽ tạo ra token xem token vừa tạo có chưa role là admin hay user. Nếu admin thì sẽ được điều hướng qua dashboard và nếu là user thì sẽ điều hướng qua trang home
 - Token được tạo sẽ cho phép người dùng đó có quyền xử dụng tính năng nào của trang web và tính năng không được dùng của trang web
-- Token được tạo sẽ được lưu trong vòng 30 giấy hoặc 30 phút tùy théo back end sử lý. Khi token hết hàng sẽ xóa đi và thay vào đó là một token được tạo khác thay thế vào. Và token dùng để tạo token thay để cho token củ có thời hạn sử dụng là 1 tuần hoặc 1 tháng tùy theo back end sử lý.
+- Token được tạo sẽ được lưu trong vòng 30 giấy hoặc 30 phút tùy theo back end sử lý. Khi token hết hàng sẽ xóa đi và thay vào đó là một token được tạo khác thay thế vào. Và token dùng để tạo token thay để cho token củ có thời hạn sử dụng là 1 tuần hoặc 1 tháng tùy theo back end sử lý.
